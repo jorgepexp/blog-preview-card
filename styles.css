@@ -4,8 +4,9 @@
   --clr-gray-500: hsl(0, 0%, 42%);
   --clr-gray-950: hsl(0, 0%, 7%);
 
-  --font-size-small: clamp(.9rem, 1vw, 2.5rem);
-  --font-size: clamp(1rem, 1vw, 3rem);
+  --font-size-small: clamp(0.8333rem, 0.7004rem + 0.6447vw, 1rem);
+  --font-size: clamp(1rem, 0.8187rem + 0.8791vw, 1.25rem);;
+  --font-size-large: clamp(1rem, 0.85rem + 0.9vw, 1.5rem);;
 
   --font-family: 'Figtree';
   --font-weight-normal: 500;
@@ -37,6 +38,7 @@ body {
 
   background-color: var(--clr-yellow);
   font-family: var(--font-family);
+  font-size: var(--font-size);
   line-height: var(--line-height);
 }
 
@@ -51,10 +53,17 @@ article {
   box-shadow: 9px 9px 0 black;
 }
 
+@media screen and (width >= 600px) {
+  article {
+    width: 385px;
+    min-height: 525px;
+  }
+}
+
 header {
   > img {
-    max-width: 100%;
-    min-height: 200px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     margin-block-end: 1.5rem;
   }
@@ -77,6 +86,7 @@ header {
   > h2 {
     font-weight: var(--font-weight-bold);
     margin-bottom: 1rem;
+    font-size: var(--font-size-large);
   }
 }
 
@@ -92,6 +102,7 @@ footer {
 
   span {
     font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
   }
 
   img {
